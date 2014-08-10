@@ -1,0 +1,44 @@
+{
+  "name": "canvas_react_i18n",
+  "description": "Convert React <Text /> components to Canvas-ready I18n.t() calls.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/amireh/canvas_react_i18n",
+  "author": {
+    "name": "Ahmad Amireh",
+    "email": "ahmad@instructure.com",
+    "url": "http://www.instructure.com"
+  },
+  "licenses": [],
+  "keywords": [
+    "canvas",
+    "lms"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/amireh/canvas_react_i18n"
+  },
+  "bugs": {
+    "url": "https://github.com/amireh/canvas_react_i18n/issues"
+  },
+
+  "main": "main.js",
+
+  "bin": {
+    "canvas_react_i18n": "./bin/runner.js"
+  },
+
+  "scripts": {
+    "start": "./bin/runner.js",
+    "test": "./node_modules/.bin/jasmine-node ./test",
+    "lint": "./node_modules/.bin/jshint lib"
+  },
+
+  "devDependencies": {
+    "jasmine-node": "^1.14.3",
+    "jshint": "x"
+  },
+
+  "dependencies": {
+    "lodash": "x"
+  }
+}
