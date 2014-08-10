@@ -3,11 +3,6 @@ var path = require('path');
 var loadFixture = require('./helpers').loadFixture;
 
 describe('#extractTextBlocks', function() {
-  it('should work', function() {
-    var fixture = loadFixture('extract_text_blocks_1.js');
-    expect(subject(fixture).length).toEqual(1);
-  });
-
   it('should extract the path, scope, and phrase', function() {
     var output = subject('<Text scope="foo.bar"></Text>')[0];
     expect(output.path).toEqual('foo.bar');
@@ -66,5 +61,15 @@ describe('#extractTextBlocks', function() {
     expect(output[1].path).toBe('foo.y');
     expect(output[1].defaultValue).toBe('Y goes there.');
     expect(output[1].offset).toEqual([ 76, 76 + 40 ]);
+  });
+
+  describe('#recompile', function() {
+    it('should return a newly-compiled I18n.t() directive', function() {
+      var output = subject('<Text scope="foo.bar" articleUrl={url}></Text>')[0];
+
+      output.phrase = 'foo';
+      output.options = { name: 'Ahmad' };
+      expect(output.recompile()).toEqual('I18n.t("foo", "", {"name":"Ahmad"});');
+    });
   });
 });
