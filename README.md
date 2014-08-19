@@ -45,7 +45,7 @@ var transformedComponent = transform(component);
 fs.writeFileSync('./some/jsx/component-transformed.jsx', transformedComponent);
 ```
 
-A [sample implementation](wiki/The-Text-Component) of the `<Text />` component can be found in the Wiki.
+A [sample implementation](https://github.com/amireh/canvas_react_i18n/wiki/The-Text-Component) of the `<Text />` component can be found in the Wiki.
 
 ## Internals
 
