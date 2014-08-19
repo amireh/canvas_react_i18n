@@ -30,13 +30,13 @@ describe('#extractTextBlocks', function() {
     it('should produce an I18n.t() call string', function() {
       var output = subject('<Text scope="foo.bar" articleUrl={url}></Text>')[0];
 
-      expect(output.stringValue).toEqual('I18n.t("bar", "", {"article_url":url});');
+      expect(output.stringValue).toEqual('I18n.t("bar", "", {"article_url":url})');
     });
 
     it('should include de-interpolated strings', function() {
       var output = subject('<Text scope="foo.bar" articleUrl={url}>Click <a href="%{article_url}">here</a>.</Text>')[0];
 
-      expect(output.stringValue).toEqual('I18n.t("bar", "Click <a href=\\\"%{article_url}\\\">here</a>.", {"article_url":url});');
+      expect(output.stringValue).toEqual('I18n.t("bar", "Click <a href=\\\"%{article_url}\\\">here</a>.", {"article_url":url})');
     });
   });
 
@@ -63,13 +63,13 @@ describe('#extractTextBlocks', function() {
     expect(output[1].offset).toEqual([ 76, 76 + 40 ]);
   });
 
-  describe('#recompile', function() {
+  describe('#compile', function() {
     it('should return a newly-compiled I18n.t() directive', function() {
       var output = subject('<Text scope="foo.bar" articleUrl={url}></Text>')[0];
 
       output.phrase = 'foo';
       output.options = { name: 'Ahmad' };
-      expect(output.recompile()).toEqual('I18n.t("foo", "", {"name":"Ahmad"});');
+      expect(output.compile()).toEqual('I18n.t("foo", "", {"name":"Ahmad"})');
     });
   });
 });

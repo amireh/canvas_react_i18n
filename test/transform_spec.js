@@ -9,7 +9,7 @@ describe('#transform', function() {
     expect(subject(input)).toEqual(output);
   });
 
-  xit('works with multiple <Text /> components', function() {
+  it('works with multiple <Text /> components', function() {
     var input = loadFixture('transform_multi.in.jsx');
     var output = loadFixture('transform_multi.out.jsx');
 
