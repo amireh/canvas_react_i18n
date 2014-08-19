@@ -8,7 +8,7 @@ define(function(require) {
     render: function() {
       return(
         <Text
-          scope="quiz_statistics.discrimination_index_help"
+          phrase="discrimination_index_help"
           articleUrl={K.DISCRIMINATION_INDEX_HELP_ARTICLE_URL}>
           <p>
             This metric provides a measure of how well a single question can tell the
