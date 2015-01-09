@@ -46,7 +46,19 @@ describe('#extractTextBlocks', function() {
     it('should include de-interpolated strings', function() {
       var output = subject('<Text key="foo.bar" articleUrl={url}>Click <a href="%{article_url}">here</a>.</Text>')[0];
 
-      expect(output.stringValue).toEqual('I18n.t("foo.bar", "Click <a href=\\\"%{article_url}\\\">here</a>.", {"article_url":url})');
+      expect(output.stringValue).toEqual('I18n.t("foo.bar", "Click <a href=\\"%{article_url}\\">here</a>.", {"article_url":url})');
+    });
+
+    it('should infer sensible placeholders from expressions', function() {
+      var output = subject('<Text key="foo.bar">Hello {this.props.user.name}</Text>')[0];
+
+      expect(output.stringValue).toEqual('I18n.t("foo.bar", "Hello %{user_name}", {"user_name":this.props.user.name})');
+    });
+
+    it('should infer quoted placeholders from expressions in markup attributes', function() {
+      var output = subject('<Text key="foo.bar">Click <a href={title}>here</a></Text>')[0];
+
+      expect(output.stringValue).toEqual('I18n.t("foo.bar", "Click <a href=\\"%{title}\\">here</a>", {"title":title})');
     });
   });
 

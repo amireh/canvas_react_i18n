@@ -46,6 +46,13 @@ define(function(require) {
               those who do not.
             </p>
           </Text>
+          <Text>
+            Hey {this.props.amigo}!
+            Although I am <a href="/" title={this.props.title}>linking to something</a> and have some
+            <strong>bold text</strong>, the translators will see <em>
+            absolutely no markup</em> and will only have a single
+            string to translate :o
+          </Text>
         </div>
       );
     }
