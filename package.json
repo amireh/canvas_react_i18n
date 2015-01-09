@@ -34,11 +34,16 @@
   },
 
   "devDependencies": {
+    "i18nliner": "^0.0.16",
     "jasmine-node": "^1.14.3",
     "jshint": "x"
   },
 
   "dependencies": {
     "lodash": "x"
+  },
+
+  "peerDependencies": {
+    "i18nliner": "^0.0.16"
   }
 }

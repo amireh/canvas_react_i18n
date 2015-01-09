@@ -15,6 +15,11 @@ describe('#extractTextBlocks', function() {
     expect(console.warn).toHaveBeenCalled();
   });
 
+  it('should infer a key if none is provided', function() {
+    var output = subject('<Text>Hello World</Text>')[0];
+    expect(output.key).toEqual('hello_world_e2033670');
+  });
+
   it('should extract parameters', function() {
     var output = subject('<Text key="bar" articleUrl="http://www.google.com"></Text>')[0];
 
