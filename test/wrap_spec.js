@@ -47,7 +47,7 @@ describe('#wrap', function() {
       '**Hi',
         '*%{name}*',
       '**',
-      '***Hello again *%{name}****',
+      '***Hello again *%{name}* ***',
       '****No nesting here****'
     ].join('\n'));
 
@@ -65,5 +65,11 @@ describe('#wrap', function() {
 
     output = subject(input);
     expect(output.wrapper['*']).toEqual('<a href="http://google.com">$1</a>');
+  });
+
+  it('should separate adjacent wrappers with whitespace', function() {
+    var input = '<b><i>Hello</i><strong>World</strong></b>, this is <em>Awesome!</em>';
+    var output = subject(input);
+    expect(output.stringValue).toEqual('*** *Hello* **World** ***, this is ****Awesome!****');
   });
 });
