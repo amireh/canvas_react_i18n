@@ -5,7 +5,7 @@ Write HTML markup inside a special `<Text />` React component and it will be use
 This JSX:
 
 ```javascript
-<Text phrase="greeting">
+<Text key="greeting">
     <p>Hello World!</p>
 </Text>
 ```
@@ -26,7 +26,7 @@ Compiles into something like this:
 } />
 ```
 
-The output will be more compact than the above making it ready to be injected *anywhere*. And of course, we're assuming that an `I18n` variable is in-scope.
+The output will be more compact than the above making it ready to be injected *anywhere*. And of course, we're assuming that an `I18n` variable is in-scope. canvas_react_i18n assumes you are using [i18n-js](https://github.com/fnando/i18n-js) in conjunction with [i18nliner](https://github.com/jenseng/i18nliner-js)
 
 See the `test/fixtures/` folder for more examples. It contains pairs of files; raw JSX inputs and their compiled outputs.
 

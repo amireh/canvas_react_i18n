@@ -11,7 +11,7 @@ define(function(require) {
       return(
         <div>
           <Text
-            phrase="discrimination_index_help"
+            key="discrimination_index_help"
             articleUrl={K.DISCRIMINATION_INDEX_HELP_ARTICLE_URL}>
             <p>
               This metric provides a measure of how well a single question can tell the
@@ -37,14 +37,21 @@ define(function(require) {
 
           <span>Separator</span>
 
-          <Text phrase="adooken">Adooken!</Text>
-          <Text phrase="adooken_y">Adooken Y!</Text>
-          <Text phrase="foo">
+          <Text key="adooken">Adooken!</Text>
+          <Text key="adooken_y">Adooken Y!</Text>
+          <Text key="foo">
             <p>
               This metric provides a measure of how well a single question can tell the
               difference (or discriminate) between students who do well on an exam and
               those who do not.
             </p>
+          </Text>
+          <Text>
+            Hey {this.props.amigo}!
+            Although I am <a href="/" title={this.props.title}>linking to something</a> and have some
+            <strong>bold text</strong>, the translators will see <em>
+            absolutely no markup</em> and will only have a single
+            string to translate :o
           </Text>
         </div>
       );
