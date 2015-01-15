@@ -1,7 +1,7 @@
 {
   "name": "canvas_react_i18n",
   "description": "Convert React <Text /> components to Canvas-ready I18n.t() calls.",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "homepage": "https://github.com/amireh/canvas_react_i18n",
   "author": {
     "name": "Ahmad Amireh",
